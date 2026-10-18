@@ -1,0 +1,17 @@
+"""Mock agent workflow for the MOVA hackathon demo."""
+
+
+def investigate(request: str) -> dict:
+    if not request.strip():
+        raise ValueError("Request cannot be empty")
+
+    return {
+        "request": request,
+        "status": "investigation_ready",
+        "demo_only": True,
+    }
+
+
+if __name__ == "__main__":
+    result = investigate("Improve investigation progress visibility")
+    print(result)
